@@ -1,5 +1,5 @@
 $(function() {
-    var socket = io('http://' + document.domain + ':9501');
+    var socket = io('http://' + document.domain + ':9502');
     var nickname;
     var isEnter = false;
 
@@ -21,12 +21,12 @@ $(function() {
                     alert('please enter a nickname');
                     return;
                 }
-                
+
                 isEnter = true;
                 $('.home-page').hide();
                 $('.chat-page').show();
                 $('#msg').focus();
-                
+
 
                 socket.emit('new user', {
                     nickname: nickname
